@@ -1,0 +1,185 @@
+@import "variables.scss";
+
+body {
+  font-family: sans-serif;
+  padding: 0px;
+  margin: 0px;
+  background: $mainBackground;
+}
+
+button {
+  background: none;
+  outline: none;
+  padding: 0px;
+  border: none;
+}
+
+
+.open-btn {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 180px;
+  height: 180px;
+  font-size: 30px;
+  color: #fff;
+  border: 2px solid #fff;
+  z-index: 3;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.open-btn:active {
+  transform: scale(0.8);
+}
+
+.look-hint {
+  width: 350px;
+  line-height: 50px;
+  letter-spacing: 2px;
+  text-align: center;
+  position: fixed;
+  top: calc(50% - 25px);
+  left: calc(50% - 175px);
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+  transform: none;
+  transition: 0.8s;
+  z-index: 30;
+
+}
+
+span {
+  color: #17C7CD;
+}
+
+.look-hint-hide {
+  opacity: 0;
+  transform: scale(0.5);
+  z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+main {
+  perspective: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.pages {
+  position: relative;
+  width: 300%;
+  transition: 0.8s;
+  transform: translateX(-33.333333333333%) translateY(-33.333333333333%);
+  will-change: transform;
+  transform-origin: 50% 17%;
+  transform-style: preserve-3d;
+  color: #fff;
+
+}
+
+.prompt {
+  position: absolute;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 85px;
+  color: #fff;
+}
+
+.welcome-prompt {
+  top: -10%;
+  width: 100%;
+}
+
+.click-prompt {
+  top: 50%;
+  left: -860px;
+}
+
+.icon-prompt {
+  top: 28%;
+  font-size: 70px;
+  right: -630px;
+}
+
+
+
+.pages-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1.7vw;
+
+  .page {
+    box-sizing: border-box;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    background: $pages-background;
+    transition: 0.3s;
+  }
+
+}
+
+.pages-active {
+
+   .page {
+     background: $active-pages-background;
+   }
+
+   .selected-page {
+     transform: translateZ(40px);
+     background: $selected-page-background;
+   }
+
+   .active-page {
+     transform: translateZ(40px);
+     background: $selected-page-background;
+   }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

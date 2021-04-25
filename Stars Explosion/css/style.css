@@ -1,0 +1,88 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: sans-serif;
+  background: #252936;
+}
+
+section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+section .stars-explosion-container {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: 100vw;
+  max-width: 700px;
+  max-height: 700px;
+  align-items: center;
+  justify-content: center;
+}
+section img {
+  animation: pulsation 2.5s infinite linear;
+}
+section .text-container {
+  width: 100vw;
+  max-width: 700px;
+}
+section .text-container h2 {
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+section .text-container span {
+  color: #17C7CD;
+}
+
+.stars-explosion {
+  position: absolute;
+  width: 100vw;
+  height: 100vw;
+  max-width: 700px;
+  max-height: 700px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  animation: starCircleRotation 90s infinite linear;
+  overflow: hidden;
+}
+
+.star-line {
+  position: absolute;
+  width: 1px;
+  height: 800px;
+  background: #17C7CD;
+  transform-style: preserve-3d;
+  transform: rotateX(-90deg);
+  transform-origin: top;
+}
+
+@keyframes starCircleRotation {
+  0% {
+    transform: rotateZ(-45deg);
+  }
+  100% {
+    transform: rotateZ(-405deg);
+  }
+}
+@keyframes pulsation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.915);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
