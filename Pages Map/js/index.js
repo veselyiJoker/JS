@@ -1,10 +1,10 @@
 'use strict'
 
-let openBtn = document.querySelector('.open-btn');
-let lookHint = document.querySelector('.look-hint');
+const openBtn = document.querySelector('.open-btn');
+const lookHint = document.querySelector('.look-hint');
 
-let pages = document.querySelector('.pages');
-let page = document.querySelectorAll('.page');
+const pages = document.querySelector('.pages');
+const page = document.querySelectorAll('.page');
 
 pages.addEventListener('click',pagesClick);
 pages.addEventListener('mouseover', pagesMouseover);

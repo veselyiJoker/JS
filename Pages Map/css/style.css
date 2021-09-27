@@ -2,7 +2,7 @@ body {
   font-family: sans-serif;
   padding: 0px;
   margin: 0px;
-  background: #252936;
+  background: #fff;
 }
 
 button {
@@ -15,19 +15,22 @@ button {
 .open-btn {
   position: fixed;
   right: 30px;
-  bottom: 30px;
-  width: 180px;
-  height: 180px;
+  top: 30px;
+  width: 80px;
+  height: 80px;
   font-size: 30px;
-  color: #fff;
-  border: 2px solid #fff;
+  color: #e17860;
+  border: 2px solid #e17860;
   z-index: 3;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .open-btn:active {
-  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
 }
 
 .look-hint {
@@ -40,24 +43,28 @@ button {
   left: calc(50% - 175px);
   font-size: 30px;
   font-weight: 500;
-  color: #fff;
-  transform: none;
+  color: #e17860;
+  -webkit-transform: none;
+          transform: none;
+  -webkit-transition: 0.8s;
   transition: 0.8s;
   z-index: 30;
 }
 
 span {
-  color: #17C7CD;
+  color: #e17860;
 }
 
 .look-hint-hide {
   opacity: 0;
-  transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
   z-index: -1;
 }
 
 main {
-  perspective: 100vw;
+  -webkit-perspective: 1920px;
+          perspective: 1920px;
   height: 100vh;
   overflow: hidden;
 }
@@ -65,11 +72,15 @@ main {
 .pages {
   position: relative;
   width: 300%;
+  -webkit-transition: 0.8s;
   transition: 0.8s;
-  transform: translateX(-33.3333333333%) translateY(-33.3333333333%);
+  -webkit-transform: translateX(-33.3333333333%) translateY(-33.3333333333%);
+          transform: translateX(-33.3333333333%) translateY(-33.3333333333%);
   will-change: transform;
-  transform-origin: 50% 17%;
-  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 17%;
+          transform-origin: 50% 17%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   color: #fff;
 }
 
@@ -78,7 +89,7 @@ main {
   text-align: center;
   font-family: sans-serif;
   font-size: 85px;
-  color: #fff;
+  color: #e17860;
 }
 
 .welcome-prompt {
@@ -99,30 +110,43 @@ main {
 
 .pages-container {
   position: relative;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1.7vw 1fr 1.7vw 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1.7vw;
 }
 .pages-container .page {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   position: relative;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
-  background: #252936;
+  background: #fff;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .pages-active .page {
-  background: #282c39;
+  background: #f0f0f0;
 }
 .pages-active .selected-page {
-  transform: translateZ(40px);
-  background: #2c303e;
+  -webkit-transform: translateZ(40px);
+          transform: translateZ(40px);
+  background: #ddd;
 }
 .pages-active .active-page {
-  transform: translateZ(40px);
-  background: #2c303e;
+  -webkit-transform: translateZ(40px);
+          transform: translateZ(40px);
+  background: #ddd;
 }

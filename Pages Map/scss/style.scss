@@ -18,15 +18,16 @@ button {
 .open-btn {
   position: fixed;
   right: 30px;
-  bottom: 30px;
-  width: 180px;
-  height: 180px;
+  top: 30px;
+  width: 80px;
+  height: 80px;
   font-size: 30px;
-  color: #fff;
-  border: 2px solid #fff;
+  color: #e17860;
+  border: 2px solid #e17860;
   z-index: 3;
   transition: 0.5s;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .open-btn:active {
@@ -43,7 +44,7 @@ button {
   left: calc(50% - 175px);
   font-size: 30px;
   font-weight: 500;
-  color: #fff;
+  color: #e17860;
   transform: none;
   transition: 0.8s;
   z-index: 30;
@@ -51,7 +52,7 @@ button {
 }
 
 span {
-  color: #17C7CD;
+  color: #e17860;
 }
 
 .look-hint-hide {
@@ -69,7 +70,7 @@ span {
 
 
 main {
-  perspective: 100vw;
+  perspective: 1920px;
   height: 100vh;
   overflow: hidden;
 }
@@ -91,7 +92,7 @@ main {
   text-align: center;
   font-family: sans-serif;
   font-size: 85px;
-  color: #fff;
+  color: #e17860;
 }
 
 .welcome-prompt {
