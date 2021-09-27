@@ -2,26 +2,8 @@
 
 const openBtn = document.querySelector('.open-btn');
 const lookHint = document.querySelector('.look-hint');
-
 const pages = document.querySelector('.pages');
 const page = document.querySelectorAll('.page');
-
-pages.addEventListener('click',pagesClick);
-pages.addEventListener('mouseover', pagesMouseover);
-
-
-function pagesMouseover() {
-
-  for (let elem of page) {
-    elem.classList.remove('selected-page');
-  }
-
-  if (event.target.closest('section').classList.contains('page') && !event.target.closest('section').classList.contains('active-page') ) {
-    event.target.closest('section').classList.add('selected-page');
-  }
-
-}
-
 
 let scaleSize = 0.4;
 let rotateX = 20;
@@ -34,12 +16,8 @@ let col3Translate = -33.3333 - (33.3333 * scaleSize);
 
 let openBtnActive = false;
 
-openBtn.addEventListener('click',openMap);
-
-function openMap () {
-
+const openMap = () => {
   if (openBtnActive == false) {
-
     pages.classList.add('pages-active');
     lookHint.classList.add('look-hint-hide');
 
@@ -54,7 +32,6 @@ function openMap () {
         `;
       }
     }
-
     openBtnActive = true;
 
   } else {
@@ -72,13 +49,11 @@ function openMap () {
     }
 
     openBtnActive = false;
-
   }
 
 }
 
-
-function pagesClick() {
+const onPagesClick = () => {
 
   if (event.target.closest('section').classList.contains('page')) {
 
@@ -112,25 +87,35 @@ function pagesClick() {
    
 }
 
+const onPagesMouseover = () => {
+  for (let elem of page) {
+    elem.classList.remove('selected-page');
+  }
 
-function switchColumnPosition(elem) {
+  if (event.target.closest('section').classList.contains('page') && !event.target.closest('section').classList.contains('active-page') ) {
+    event.target.closest('section').classList.add('selected-page');
+  }
+}
+
+const switchColumnPosition = (elem) => {
 
   switch (elem.dataset.column) {
 
     case '1':
       return col1Translate;
-    break;
 
     case '2':
       return col2Translate;
-    break;
 
     case '3':
       return col3Translate;
-    break;
 
   }
 
 }
 
-// end
+pages.addEventListener('click', onPagesClick);
+pages.addEventListener('mouseover', onPagesMouseover);
+openBtn.addEventListener('click', openMap);
+
+
