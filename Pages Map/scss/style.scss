@@ -73,7 +73,7 @@ main {
   color: #e17860;
 }
 .welcome-hint {
-  top: -10%;
+  top: -15%;
   width: 100%;
   font-size: 150px;
 }
@@ -92,6 +92,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1.7vw;
+  z-index: 2;
   .page {
     box-sizing: border-box;
     position: relative;

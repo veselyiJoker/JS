@@ -92,7 +92,7 @@ main {
 }
 
 .welcome-hint {
-  top: -10%;
+  top: -15%;
   width: 100%;
   font-size: 150px;
 }
@@ -116,6 +116,7 @@ main {
   -ms-grid-columns: 1fr 1.7vw 1fr 1.7vw 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1.7vw;
+  z-index: 2;
 }
 .pages-container .page {
   -webkit-box-sizing: border-box;

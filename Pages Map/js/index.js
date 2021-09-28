@@ -2,8 +2,8 @@
 
 const openBtn = document.querySelector('.open-btn');
 const lookHint = document.querySelector('.look-hint');
-const pages = document.querySelector('.pages');
-const page = document.querySelectorAll('.page');
+const pagesContainer = document.querySelector('.pages');
+const pages = document.querySelectorAll('.page');
 
 let scaleSize = 0.4;
 let rotateX = 20;
@@ -18,12 +18,12 @@ let openBtnActive = false;
 
 const openMap = () => {
   if (openBtnActive == false) {
-    pages.classList.add('pages-active');
+    pagesContainer.classList.add('pages-active');
     lookHint.classList.add('look-hint-hide');
 
-    for (let elem of page) {
+    for (let elem of pages) {
       if (elem.classList.contains('active-page')) {
-        pages.style.transform = `translateX(${switchColumnPosition(elem)}%)
+        pagesContainer.style.transform = `translateX(${switchColumnPosition(elem)}%)
                                 scale(${scaleSize})
                                 translateY(${-33.333333 * (elem.dataset.row - 1)}%)
                                 rotateX(${rotateX}deg)
@@ -36,13 +36,13 @@ const openMap = () => {
 
   } else {
 
-    pages.classList.remove('pages-active');
+    pagesContainer.classList.remove('pages-active');
     lookHint.classList.remove('look-hint-hide');
 
 
-    for (let elem of page) {
+    for (let elem of pages) {
       if (elem.classList.contains('active-page')) {
-        pages.style.transform = `translateX(${-33.333333 * (elem.dataset.column - 1)}%)
+        pagesContainer.style.transform = `translateX(${-33.333333 * (elem.dataset.column - 1)}%)
                                  translateY(${-33.333333 * (elem.dataset.row - 1)}%)
         `;
       }
@@ -59,8 +59,8 @@ const onPagesClick = () => {
 
     if (event.target.closest('section').classList.contains('active-page') ) {
       
-      pages.classList.remove('pages-active');
-      pages.style.transform = `translateX(${-33.333333 * (event.target.closest('section').dataset.column - 1)}%)
+      pagesContainer.classList.remove('pages-active');
+      pagesContainer.style.transform = `translateX(${-33.333333 * (event.target.closest('section').dataset.column - 1)}%)
                                translateY(${-33.333333 * (event.target.closest('section').dataset.row - 1)}%)`;
       openBtnActive = false;
       lookHint.classList.remove('look-hint-hide');
@@ -69,13 +69,13 @@ const onPagesClick = () => {
 
       lookHint.classList.add('look-hint-hide');
 
-      for (let elem of page) {
+      for (let elem of pages) {
         elem.classList.remove('active-page');
       }
 
       event.target.closest('section').classList.add('active-page');
 
-      pages.style.transform = `translateX(${switchColumnPosition(event.target.closest('section'))}%)
+      pagesContainer.style.transform = `translateX(${switchColumnPosition(event.target.closest('section'))}%)
                                scale(${scaleSize})
                                translateY(${-33.333333 * (event.target.closest('section').dataset.row - 1)}%)
                                rotateX(${rotateX}deg)
@@ -88,7 +88,7 @@ const onPagesClick = () => {
 }
 
 const onPagesMouseover = () => {
-  for (let elem of page) {
+  for (let elem of pages) {
     elem.classList.remove('selected-page');
   }
 
@@ -114,8 +114,8 @@ const switchColumnPosition = (elem) => {
 
 }
 
-pages.addEventListener('click', onPagesClick);
-pages.addEventListener('mouseover', onPagesMouseover);
+pagesContainer.addEventListener('click', onPagesClick);
+pagesContainer.addEventListener('mouseover', onPagesMouseover);
 openBtn.addEventListener('click', openMap);
 
 
