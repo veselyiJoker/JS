@@ -1,0 +1,122 @@
+@import "variables.scss";
+body {
+  font-family: sans-serif;
+  padding: 0px;
+  margin: 0px;
+  background: $mainBackground;
+}
+button {
+  background: none;
+  outline: none;
+  padding: 0px;
+  border: none;
+}
+.open-btn {
+  position: fixed;
+  right: 30px;
+  top: 30px;
+  width: 80px;
+  height: 80px;
+  z-index: 3;
+  transition: 0.5s;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #666;
+}
+.open-btn span {
+  display: block;
+  font-size: 65px;
+  margin-right: -37px;
+  color: #60c3e1;
+  transform: rotateZ(90deg);
+}
+.open-btn:active {
+  transform: scale(0.9);
+}
+.look-hint {
+  width: 350px;
+  line-height: 50px;
+  letter-spacing: 2px;
+  text-align: center;
+  position: fixed;
+  top: calc(50% - 25px);
+  left: calc(50% - 175px);
+  font-size: 30px;
+  font-weight: 500;
+  color: #666;
+  transform: none;
+  transition: 0.8s;
+  z-index: 30;
+}
+.look-hint-hide {
+  opacity: 0;
+  transform: scale(0.5);
+  z-index: -1;
+}
+main {
+  perspective: 3000px;
+  height: 100vh;
+  overflow: hidden;
+}
+.pages-section {
+  position: relative;
+  width: 300%;
+  transition: 0.8s;
+  transform: translateX(-33.333333333333%) translateY(0%);
+  will-change: transform;
+  transform-origin: 50% 17%;
+  transform-style: preserve-3d;
+  color: #fff;
+}
+.hint {
+  position: absolute;
+  text-align: center;
+  font-family: sans-serif;
+  color: $hint-color;
+}
+.welcome-hint {
+  top: -15%;
+  width: 100%;
+  font-size: 150px;
+}
+.click-hint {
+  top: calc(50% - 50px);
+  left: -1000px;
+  font-size: 100px;
+}
+.adaptive-design-hint {
+  top: calc(50% - 50px);
+  font-size: 100px;
+  right: -900px;
+}
+.pages-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1.7vw;
+  overflow: hidden;
+  z-index: 3;
+  .page {
+    box-sizing: border-box;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    background: $pages-background;
+    transition: 0.3s;
+  }
+
+}
+.pages-active {
+   .page {
+     background: $active-pages-background;
+   }
+   .selected-page {
+     background: $selected-page-background;
+   }
+   .active-page {
+     background: $selected-page-background;
+   }
+}
